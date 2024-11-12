@@ -2,6 +2,7 @@ package it.unibo.mvc;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -28,18 +29,32 @@ public class MiniGUI {
      */
     public MiniGUI() {
         final JPanel canvas = new JPanel();
+        final JPanel myPanel = new JPanel();
         canvas.setLayout(new BorderLayout());
+        canvas.add(myPanel, BorderLayout.CENTER);
         final JButton write = new JButton("Print a random number on standard output");
-        canvas.add(write, BorderLayout.CENTER);
+        final JLabel show = new JLabel("Random Numeber");
+        show.setLabelFor(write);
+        myPanel.add(write, BorderLayout.CENTER);
+        myPanel.add(show,BorderLayout.NORTH);
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
-         * Handlers
+         * Handler
          */
         write.addActionListener(new ActionListener() {
+            /**
+             * Every time the button is pressed:
+             *  - it generates a random number from 0 to 100
+             *  - change the label text 
+             *  - print in stdout
+             *
+             */
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println(randomGenerator.nextInt());
+                int rndNum = randomGenerator.nextInt(100);
+                show.setText(Integer.toString(rndNum));
+                System.out.println(rndNum);
             }
         });
     }
@@ -64,6 +79,10 @@ public class MiniGUI {
          * on screen. Results may vary, but it is generally the best choice.
          */
         frame.setLocationByPlatform(true);
+        /**
+         * Make frame not risizable
+         */
+        frame.setResizable(false);
         /*
          * Resize the frame to minimum size
          */
@@ -72,6 +91,7 @@ public class MiniGUI {
          * OK, ready to pull the frame onscreen
          */
         frame.setVisible(true);
+
     }
 
     /**
