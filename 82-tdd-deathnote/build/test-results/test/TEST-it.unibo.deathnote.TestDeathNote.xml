@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.unibo.deathnote.TestDeathNote" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-11-14T15:18:02" hostname="Mac.Home" time="6.249">
+  <properties/>
+  <testcase name="testDeathDetails()" classname="it.unibo.deathnote.TestDeathNote" time="6.132"/>
+  <testcase name="testRules()" classname="it.unibo.deathnote.TestDeathNote" time="0.001"/>
+  <testcase name="testDeathCause()" classname="it.unibo.deathnote.TestDeathNote" time="0.107"/>
+  <testcase name="testActualDeath()" classname="it.unibo.deathnote.TestDeathNote" time="0.001"/>
+  <testcase name="testIllegalRule()" classname="it.unibo.deathnote.TestDeathNote" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
